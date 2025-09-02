@@ -5,13 +5,10 @@ from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 def fix_marks(schoolkid):
     """Исправить все плохие оценки (2 и 3 на 5)."""
-    bad_marks = Mark.objects.filter(
+    Mark.objects.filter(
         schoolkid=schoolkid,
         points__in=[2, 3]
-    )
-    for good_mark in bad_marks:
-        good_mark.points = 5
-        good_mark.save()
+    ).update(points=5)
     print("Исправлены все плохие оценки")
 
 

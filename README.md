@@ -26,7 +26,7 @@ pip install -r requirements.txt
 3. Проверяем версию Python `python --version` и какие установлены библиотеки `pip freeze`.
 4. В случае успеха. Запускаем Django shell: 
 ```
-python manage.py shel
+python manage.py shell
 ```
 
 ## Как использовать
